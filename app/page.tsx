@@ -2,6 +2,7 @@ import Image from "next/image";
 import {
   about,
   brand,
+  credential,
   example,
   faq,
   finalCta,
@@ -13,7 +14,8 @@ import {
 } from "@/content/site";
 import { Accent } from "@/components/Accent";
 import { BookButton } from "@/components/BookButton";
-import { HeroMockup } from "@/components/HeroMockup";
+import { ClaudeMark } from "@/components/ClaudeMark";
+import { HeroDemo } from "@/components/HeroDemo";
 import { Reveal } from "@/components/Reveal";
 import { Section } from "@/components/Section";
 
@@ -61,11 +63,17 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:col-span-5">
-              <HeroMockup />
+              <HeroDemo />
             </div>
           </div>
 
-          <ul className="mt-14 grid gap-3 border-t border-line pt-6 text-sm text-muted sm:grid-cols-3 lg:mt-20">
+          <ul className="mt-14 grid gap-x-8 gap-y-3 border-t border-line pt-6 text-sm text-muted sm:grid-cols-2 lg:mt-20 lg:flex lg:items-center lg:justify-between">
+            {credential.show && (
+              <li className="flex items-center gap-2.5 text-ink">
+                <ClaudeMark className="size-5 shrink-0" />
+                {credential.short}
+              </li>
+            )}
             {hero.facts.map((fact) => (
               <li key={fact} className="flex items-center gap-3">
                 <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
@@ -208,6 +216,19 @@ export default function Home() {
                 {p}
               </p>
             ))}
+            {credential.show && (
+              <div className="flex items-start gap-4 rounded-2xl border border-line p-5">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-surface">
+                  <ClaudeMark className="size-6" />
+                </span>
+                <div>
+                  <p className="font-serif text-xl leading-tight">{credential.name}</p>
+                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-muted">
+                    {credential.detail}
+                  </p>
+                </div>
+              </div>
+            )}
             <div className="pt-4">
               <BookButton />
             </div>

@@ -44,7 +44,8 @@ To add or remove an FAQ, a service, or a problem, add or delete one `{ ... }` bl
 
 ### The hero illustration and italic headlines
 
-- The report card beside the main headline is a picture of sample output, not a working tool. Its text and numbers live under `hero.mockup` in `content/site.ts`. The numbers are made up, so keep the "Sample data" label.
+- The animated card beside the main headline is a picture of sample output, not a working tool. It types a request, shows a result, and cycles through four samples. The samples live under `hero.demo` in `content/site.ts`. The numbers are made up, so keep the "Sample data" label.
+- The Claude mark next to your Claude Corps credential is Anthropic's trademark. Confirm the fellowship allows you to display it. To hide it, set `credential.show` to `false` in `content/site.ts`.
 - To put part of a headline in italics, wrap it in asterisks, like `"More time for the work that *grows your business.*"`. This works for the hero headline and the closing headline.
 
 ### Rebrand to a company name later

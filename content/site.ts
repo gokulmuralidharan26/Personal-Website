@@ -59,28 +59,93 @@ export const hero = {
     "The first call is free",
   ],
   /**
-   * The illustration beside the headline. It shows the kind of report an
-   * agent could write. Every figure is made up and the card is labeled as
-   * sample data. Keep that label if you change the numbers.
+   * The animated illustration beside the headline. It types each request,
+   * shows a result, then moves to the next sample. Every figure is made up
+   * and the card is labeled as sample data. Keep that label if you change
+   * the numbers. Add or remove samples freely; keep three stats in each.
    */
-  mockup: {
+  demo: {
     sampleLabel: "Sample data",
-    request: "Write my weekly marketing report",
-    title: "Monday marketing report",
-    meta: "Written by your marketing agent. Ready at 7:00 am.",
-    stats: [
-      { label: "Ad spend", value: "$4,120", note: "flat" },
-      { label: "Leads", value: "86", note: "up 12" },
-      { label: "Cost per lead", value: "$47.90", note: "down 14%" },
-    ],
     summaryLabel: "Summary",
-    summary:
-      "Leads rose 16% while spend held flat. The search campaign drove most of the gain. One ad set spent $310 and brought in no leads.",
     actionLabel: "Suggested next step",
-    action: "Pause the spring promo ad set",
-    actionButton: "Approve",
-    footnote: "Nothing changes until you approve it.",
+    tabsLabel: "Choose a sample",
+    pauseLabel: "Pause the animation",
+    playLabel: "Play the animation",
+    samples: [
+      {
+        tab: "Marketing",
+        request: "Write my weekly marketing report",
+        title: "Monday marketing report",
+        meta: "Written by your marketing agent. Ready at 7:00 am.",
+        stats: [
+          { label: "Ad spend", value: "$4,120", note: "flat" },
+          { label: "Leads", value: "86", note: "up 12" },
+          { label: "Cost per lead", value: "$47.90", note: "down 14%" },
+        ],
+        summary:
+          "Leads rose 16% while spend held flat. The search campaign drove most of the gain. One ad set spent $310 and brought in no leads.",
+        action: "Pause the spring promo ad set",
+        actionButton: "Approve",
+      },
+      {
+        tab: "Sales",
+        request: "Follow up with this week's new leads",
+        title: "Lead follow-ups",
+        meta: "Drafted by your sales agent. Waiting for your review.",
+        stats: [
+          { label: "New leads", value: "14", note: "this week" },
+          { label: "Drafts ready", value: "14", note: "in your voice" },
+          { label: "Asked for pricing", value: "3", note: "rate sheet added" },
+        ],
+        summary:
+          "Every lead from the website form has a personal reply drafted. Three asked about pricing, so their replies include your rate sheet.",
+        action: "Send 14 follow-up emails",
+        actionButton: "Approve",
+      },
+      {
+        tab: "Billing",
+        request: "Chase my overdue invoices",
+        title: "Overdue invoices",
+        meta: "Checked by your billing agent every morning.",
+        stats: [
+          { label: "Overdue", value: "6", note: "invoices" },
+          { label: "Amount owed", value: "$18,400", note: "in total" },
+          { label: "Oldest", value: "47", note: "days late" },
+        ],
+        summary:
+          "Six invoices are past due. A polite reminder is drafted for each one. Two of these clients have paid late three months in a row.",
+        action: "Send 6 payment reminders",
+        actionButton: "Approve",
+      },
+      {
+        tab: "Support",
+        request: "Sort today's customer messages",
+        title: "Inbox summary",
+        meta: "Sorted by your support agent at 5:00 pm.",
+        stats: [
+          { label: "Messages", value: "52", note: "today" },
+          { label: "Answered", value: "41", note: "from your FAQ" },
+          { label: "Need you", value: "3", note: "flagged" },
+        ],
+        summary:
+          "41 routine questions were answered from your FAQ. Eight are waiting on a refund decision. Three need a reply from you personally.",
+        action: "Review the 3 flagged messages",
+        actionButton: "Open",
+      },
+    ],
   },
+};
+
+/**
+ * The fellowship badge, shown with the Claude mark in the hero and the
+ * About section. Set `show` to false to hide it everywhere.
+ */
+export const credential = {
+  show: true,
+  name: "Claude Corps",
+  short: "Claude Corps fellow, inaugural cohort",
+  detail:
+    "Selected for the inaugural cohort of Claude Corps, a fellowship from Anthropic and CodePath for forward deployed AI engineers.",
 };
 
 export const problems = {
