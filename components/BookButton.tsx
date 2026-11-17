@@ -6,13 +6,6 @@ type Props = {
   size?: "sm" | "lg";
   label?: string;
   className?: string;
-  /** "inverse" is the cream button used on the green bands. */
-  tone?: "accent" | "inverse";
-};
-
-const tones = {
-  accent: "bg-accent text-accent-ink",
-  inverse: "bg-hero-ink text-hero",
 };
 
 const sizes = {
@@ -21,9 +14,9 @@ const sizes = {
 };
 
 /** The one call to action on the site. Reads its link from content/site.ts. */
-export function BookButton({ size = "lg", label, className = "", tone = "accent" }: Props) {
+export function BookButton({ size = "lg", label, className = "" }: Props) {
   const text = label ?? (size === "sm" ? cta.bookShort : cta.book);
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-medium transition-opacity hover:opacity-85 ${tones[tone]} ${sizes[size]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full bg-accent font-medium text-accent-ink transition-opacity hover:opacity-85 ${sizes[size]} ${className}`;
 
   const inner = (
     <>

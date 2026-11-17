@@ -34,7 +34,7 @@ export default function Image() {
               width: 14,
               height: 14,
               borderRadius: 14,
-              background: "#1c5a43",
+              background: "#15181a",
               marginRight: 18,
             }}
           />

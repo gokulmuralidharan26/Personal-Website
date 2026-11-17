@@ -5,43 +5,37 @@
   --bg: #f7f5f0;
   --surface: #efece4;
   --ink: #15181a;
-  --muted: #565b59;
+  --muted: #595c5b;
   --line: #d9d5ca;
-  --accent: #1c5a43;
-  --accent-ink: #ffffff;
-  /* The full-width green bands (hero and closing section) */
-  --hero: #1b4a38;
-  --hero-ink: #f6f1e6;
-  --hero-muted: #c5d6ca;
-  --hero-line: rgb(246 241 230 / 0.2);
-  --hero-accent: #a8dcc0;
+  /* Buttons and small highlights. Black on light, cream on dark. */
+  --accent: #15181a;
+  --accent-ink: #f7f5f0;
   color-scheme: light;
 }
 
 /* Dark theme: follows the system unless the visitor picked light */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #101312;
-    --surface: #181c1a;
-    --ink: #eceae4;
-    --muted: #a4a8a3;
-    --line: #2b302d;
-    --accent: #86d3ad;
-    --accent-ink: #0c1512;
-    --hero: #143527;
+    --bg: #111111;
+    --surface: #1b1b1a;
+    --ink: #ecebe7;
+    --muted: #a5a5a1;
+    --line: #2f2f2d;
+    --accent: #ecebe7;
+    --accent-ink: #111111;
     color-scheme: dark;
   }
 }
 
+/* Dark theme: picked with the toggle */
 :root[data-theme="dark"] {
-  --bg: #101312;
-  --surface: #181c1a;
-  --ink: #eceae4;
-  --muted: #a4a8a3;
-  --line: #2b302d;
-  --accent: #86d3ad;
-  --accent-ink: #0c1512;
-  --hero: #143527;
+  --bg: #111111;
+  --surface: #1b1b1a;
+  --ink: #ecebe7;
+  --muted: #a5a5a1;
+  --line: #2f2f2d;
+  --accent: #ecebe7;
+  --accent-ink: #111111;
   color-scheme: dark;
 }
 
@@ -53,11 +47,6 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
-  --color-hero: var(--hero);
-  --color-hero-ink: var(--hero-ink);
-  --color-hero-muted: var(--hero-muted);
-  --color-hero-line: var(--hero-line);
-  --color-hero-accent: var(--hero-accent);
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-display), ui-serif, Georgia, serif;
 }
@@ -83,13 +72,27 @@ body {
   border-radius: 2px;
 }
 
-.on-hero :focus-visible {
-  outline-color: var(--hero-ink);
+/* The theme button shows a moon in light mode and a sun in dark mode. */
+.icon-sun {
+  display: none;
 }
 
-.on-hero ::selection {
-  background: var(--hero-ink);
-  color: var(--hero);
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .icon-moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .icon-moon {
+  display: none;
 }
 
 /* Subtle entrance motion. Only hides content once JavaScript is confirmed on. */

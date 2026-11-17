@@ -49,7 +49,7 @@ export const nav = [
 
 export const hero = {
   eyebrow: "AI consulting for founders, CEOs, and small business owners",
-  /** Wrap a phrase in *asterisks* to set it in italics with the accent color. */
+  /** Wrap a phrase in *asterisks* to set it in italics, in a softer tone. */
   headline: "Less busywork. More time for the work that *grows your business.*",
   sub: "I build AI agents and automations that take the repetitive admin off your team's plate. You get the hours back.",
   secondary: { label: "See how it works", href: "#process" },
