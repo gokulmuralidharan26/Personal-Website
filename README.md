@@ -42,13 +42,18 @@ All text lives in one file: **`content/site.ts`**. Headlines, services, steps, t
 
 To add or remove an FAQ, a service, or a problem, add or delete one `{ ... }` block in the matching list.
 
+### The hero illustration and italic headlines
+
+- The report card beside the main headline is a picture of sample output, not a working tool. Its text and numbers live under `hero.mockup` in `content/site.ts`. The numbers are made up, so keep the "Sample data" label.
+- To put part of a headline in green italics, wrap it in asterisks, like `"More time for the work that *grows your business.*"`. This works for the hero headline and the closing headline.
+
 ### Rebrand to a company name later
 
 In `content/site.ts`, change `brand.name` and `brand.initials`. That updates the header wordmark, footer, page titles, favicon, and social sharing image. Then update `seo.title`, and reword any first-person copy you want to change.
 
 ### Change colors or fonts
 
-- Colors: the variables at the top of `app/globals.css`. There is one set for light mode and one for dark. `--accent` is the single accent color.
+- Colors: the variables at the top of `app/globals.css`. There is one set for light mode and one for dark. `--accent` is the single accent color, and `--hero` is the green background of the top and closing sections.
 - Fonts: the two font imports at the top of `app/layout.tsx`.
 - The social image and favicon use fixed colors, set in `app/opengraph-image.tsx`, `app/icon.tsx`, and `app/apple-icon.tsx`.
 
@@ -96,5 +101,5 @@ app/opengraph-image.tsx  Social sharing image, generated from the content file
 app/icon.tsx             Favicon, generated from your initials
 app/sitemap.ts           sitemap.xml
 app/robots.ts            robots.txt
-components/              Header, footer, buttons, form, theme toggle
+components/              Header, footer, buttons, form, theme toggle, hero illustration
 ```

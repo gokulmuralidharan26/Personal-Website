@@ -11,7 +11,9 @@ import {
   process,
   services,
 } from "@/content/site";
+import { Accent } from "@/components/Accent";
 import { BookButton } from "@/components/BookButton";
+import { HeroMockup } from "@/components/HeroMockup";
 import { Reveal } from "@/components/Reveal";
 import { Section } from "@/components/Section";
 
@@ -31,35 +33,42 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section aria-labelledby="hero-title">
-        <div className="mx-auto max-w-6xl px-5 pb-16 pt-16 sm:px-8 sm:pt-24 md:pb-24 md:pt-32">
-          <p className="max-w-md text-sm uppercase leading-relaxed tracking-[0.14em] text-muted sm:max-w-none">
-            {hero.eyebrow}
-          </p>
-          <h1
-            id="hero-title"
-            className="mt-6 max-w-5xl text-balance font-serif text-[2.6rem] font-normal leading-[1.04] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.25rem]"
-          >
-            {hero.headline}
-          </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-            {hero.sub}
-          </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
-            <BookButton />
-            <a
-              href={hero.secondary.href}
-              className="inline-flex h-11 items-center gap-2 self-start font-medium underline decoration-line decoration-1 underline-offset-[6px] transition-colors hover:decoration-ink sm:self-auto"
-            >
-              {hero.secondary.label}
-              <span aria-hidden="true">↓</span>
-            </a>
+      <section aria-labelledby="hero-title" className="on-hero bg-hero text-hero-ink">
+        <div className="mx-auto max-w-6xl px-5 pb-14 pt-14 sm:px-8 sm:pt-20 lg:pb-20 lg:pt-24">
+          <div className="grid items-center gap-x-12 gap-y-14 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <p className="max-w-md text-sm uppercase leading-relaxed tracking-[0.14em] text-hero-muted sm:max-w-none">
+                {hero.eyebrow}
+              </p>
+              <h1
+                id="hero-title"
+                className="mt-6 text-balance font-serif text-[2.6rem] font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.1rem]"
+              >
+                <Accent text={hero.headline} />
+              </h1>
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-hero-muted sm:text-xl">
+                {hero.sub}
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+                <BookButton tone="inverse" />
+                <a
+                  href={hero.secondary.href}
+                  className="inline-flex h-11 items-center gap-2 self-start font-medium underline decoration-hero-line decoration-1 underline-offset-[6px] transition-colors hover:decoration-hero-ink sm:self-auto"
+                >
+                  {hero.secondary.label}
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <HeroMockup />
+            </div>
           </div>
 
-          <ul className="mt-16 grid gap-3 border-t border-line pt-6 text-sm text-muted sm:grid-cols-3 md:mt-24">
+          <ul className="mt-14 grid gap-3 border-t border-hero-line pt-6 text-sm text-hero-muted sm:grid-cols-3 lg:mt-20">
             {hero.facts.map((fact) => (
               <li key={fact} className="flex items-center gap-3">
-                <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
+                <span aria-hidden="true" className="size-1.5 rounded-full bg-hero-accent" />
                 {fact}
               </li>
             ))}
@@ -229,24 +238,24 @@ export default function Home() {
       </Section>
 
       {/* Final call to action */}
-      <section aria-labelledby="cta-title" className="border-t border-line bg-surface">
+      <section aria-labelledby="cta-title" className="on-hero bg-hero text-hero-ink">
         <Reveal className="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-36">
           <h2
             id="cta-title"
-            className="max-w-4xl text-balance font-serif text-4xl font-normal leading-[1.06] tracking-tight sm:text-6xl md:text-7xl"
+            className="max-w-4xl text-balance font-serif text-4xl font-light leading-[1.06] tracking-tight sm:text-6xl md:text-7xl"
           >
-            {finalCta.title}
+            <Accent text={finalCta.title} />
           </h2>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-hero-muted sm:text-xl">
             {finalCta.body}
           </p>
           <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
-            <BookButton />
-            <p className="text-muted">
+            <BookButton tone="inverse" />
+            <p className="text-hero-muted">
               {finalCta.emailPrompt}{" "}
               <a
                 href={`mailto:${links.email}`}
-                className="break-all text-ink underline decoration-line underline-offset-[6px] hover:decoration-ink"
+                className="break-all text-hero-ink underline decoration-hero-line underline-offset-[6px] hover:decoration-hero-ink"
               >
                 {links.email}
               </a>

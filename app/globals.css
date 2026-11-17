@@ -9,6 +9,12 @@
   --line: #d9d5ca;
   --accent: #1c5a43;
   --accent-ink: #ffffff;
+  /* The full-width green bands (hero and closing section) */
+  --hero: #1b4a38;
+  --hero-ink: #f6f1e6;
+  --hero-muted: #c5d6ca;
+  --hero-line: rgb(246 241 230 / 0.2);
+  --hero-accent: #a8dcc0;
   color-scheme: light;
 }
 
@@ -22,6 +28,7 @@
     --line: #2b302d;
     --accent: #86d3ad;
     --accent-ink: #0c1512;
+    --hero: #143527;
     color-scheme: dark;
   }
 }
@@ -34,6 +41,7 @@
   --line: #2b302d;
   --accent: #86d3ad;
   --accent-ink: #0c1512;
+  --hero: #143527;
   color-scheme: dark;
 }
 
@@ -45,6 +53,11 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
+  --color-hero: var(--hero);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-muted: var(--hero-muted);
+  --color-hero-line: var(--hero-line);
+  --color-hero-accent: var(--hero-accent);
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-display), ui-serif, Georgia, serif;
 }
@@ -68,6 +81,15 @@ body {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+.on-hero :focus-visible {
+  outline-color: var(--hero-ink);
+}
+
+.on-hero ::selection {
+  background: var(--hero-ink);
+  color: var(--hero);
 }
 
 /* Subtle entrance motion. Only hides content once JavaScript is confirmed on. */

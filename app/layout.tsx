@@ -15,6 +15,7 @@ const body = Geist({
 const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 

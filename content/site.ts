@@ -49,7 +49,8 @@ export const nav = [
 
 export const hero = {
   eyebrow: "AI consulting for founders, CEOs, and small business owners",
-  headline: "Less busywork. More time for the work that grows your business.",
+  /** Wrap a phrase in *asterisks* to set it in italics with the accent color. */
+  headline: "Less busywork. More time for the work that *grows your business.*",
   sub: "I build AI agents and automations that take the repetitive admin off your team's plate. You get the hours back.",
   secondary: { label: "See how it works", href: "#process" },
   facts: [
@@ -57,6 +58,29 @@ export const hero = {
     "You work with me directly",
     "The first call is free",
   ],
+  /**
+   * The illustration beside the headline. It shows the kind of report an
+   * agent could write. Every figure is made up and the card is labeled as
+   * sample data. Keep that label if you change the numbers.
+   */
+  mockup: {
+    sampleLabel: "Sample data",
+    request: "Write my weekly marketing report",
+    title: "Monday marketing report",
+    meta: "Written by your marketing agent. Ready at 7:00 am.",
+    stats: [
+      { label: "Ad spend", value: "$4,120", note: "flat" },
+      { label: "Leads", value: "86", note: "up 12" },
+      { label: "Cost per lead", value: "$47.90", note: "down 14%" },
+    ],
+    summaryLabel: "Summary",
+    summary:
+      "Leads rose 16% while spend held flat. The search campaign drove most of the gain. One ad set spent $310 and brought in no leads.",
+    actionLabel: "Suggested next step",
+    action: "Pause the spring promo ad set",
+    actionButton: "Approve",
+    footnote: "Nothing changes until you approve it.",
+  },
 };
 
 export const problems = {
@@ -207,7 +231,7 @@ export const faq = {
 };
 
 export const finalCta = {
-  title: "Find out what AI can take off your plate.",
+  title: "Find out what AI can *take off your plate.*",
   body: "Book a free intro call. Tell me where your time goes, and I'll tell you what I'd automate first.",
   emailPrompt: "Prefer email?",
 };
